@@ -1,322 +1,314 @@
 [
-    {
-        "label":  "Select mailbox",
-        "fields":  [
-                       {
-                           "key":  "textInput",
-                           "templateOptions":  {
-                                                   "label":  "Search",
-                                                   "required":  true
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Hide element",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "gridMailboxList",
-                           "templateOptions":  {
-                                                   "label":  "Mailbox List",
-                                                   "required":  true,
-                                                   "grid":  {
-                                                                "columns":  [
-                                                                                {
-                                                                                    "headerName":  "Identity",
-                                                                                    "field":  "Identity"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Display Name",
-                                                                                    "field":  "DisplayName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Distinguished Name",
-                                                                                    "field":  "DistinguishedName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "User Principal Name",
-                                                                                    "field":  "UserPrincipalName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Exchange Guid",
-                                                                                    "field":  "ExchangeGuid"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Sam Account Name",
-                                                                                    "field":  "SamAccountName"
-                                                                                }
-                                                                            ],
-                                                                "height":  300,
-                                                                "rowSelection":  "single"
-                                                            },
-                                                   "dataSourceConfig":  {
-                                                                            "dataSourceGuid":  "$dataSourceGuid_0",
-                                                                            "input":  {
-                                                                                          "propertyInputs":  [
-                                                                                                                 {
-                                                                                                                     "propertyName":  "SearchMailbox",
-                                                                                                                     "otherFieldValue":  {
-                                                                                                                                             "otherFieldKey":  "textInput"
-                                                                                                                                         }
-                                                                                                                 }
-                                                                                                             ]
-                                                                                      }
-                                                                        },
-                                                   "useFilter":  true,
-                                                   "useDefault":  false
-                                               },
-                           "type":  "grid",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  true
-                       }
-                   ]
-    },
-    {
-        "label":  "Edit attributes",
-        "fields":  [
-                       {
-                           "key":  "gridSelectedMailbox",
-                           "templateOptions":  {
-                                                   "label":  "Selected Mailbox ",
-                                                   "required":  false,
-                                                   "grid":  {
-                                                                "columns":  [
-                                                                                {
-                                                                                    "headerName":  "Display Name",
-                                                                                    "field":  "DisplayName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Sam Account Name",
-                                                                                    "field":  "SamAccountName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "User Principal Name",
-                                                                                    "field":  "UserPrincipalName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Distinguished Name",
-                                                                                    "field":  "DistinguishedName"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute1",
-                                                                                    "field":  "CustomAttribute1"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute2",
-                                                                                    "field":  "CustomAttribute2"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute3",
-                                                                                    "field":  "CustomAttribute3"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute4",
-                                                                                    "field":  "CustomAttribute4"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute5",
-                                                                                    "field":  "CustomAttribute5"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute6",
-                                                                                    "field":  "CustomAttribute6"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute7",
-                                                                                    "field":  "CustomAttribute7"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute8",
-                                                                                    "field":  "CustomAttribute8"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute9",
-                                                                                    "field":  "CustomAttribute9"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute10",
-                                                                                    "field":  "CustomAttribute10"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute11",
-                                                                                    "field":  "CustomAttribute11"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute12",
-                                                                                    "field":  "CustomAttribute12"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute13",
-                                                                                    "field":  "CustomAttribute13"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute14",
-                                                                                    "field":  "CustomAttribute14"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Custom Attribute15",
-                                                                                    "field":  "CustomAttribute15"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Identity",
-                                                                                    "field":  "Identity"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Exchange Guid",
-                                                                                    "field":  "ExchangeGuid"
-                                                                                },
-                                                                                {
-                                                                                    "headerName":  "Isdefault Selected",
-                                                                                    "field":  "IsdefaultSelected"
-                                                                                }
-                                                                            ],
-                                                                "height":  150,
-                                                                "rowSelection":  "single"
-                                                            },
-                                                   "dataSourceConfig":  {
-                                                                            "dataSourceGuid":  "$dataSourceGuid_1",
-                                                                            "input":  {
-                                                                                          "propertyInputs":  [
-                                                                                                                 {
-                                                                                                                     "propertyName":  "SelectedMailbox",
-                                                                                                                     "otherFieldValue":  {
-                                                                                                                                             "otherFieldKey":  "gridMailboxList"
-                                                                                                                                         }
-                                                                                                                 }
-                                                                                                             ]
-                                                                                      }
-                                                                        },
-                                                   "useDefault":  true,
-                                                   "defaultSelectorProperty":  "IsdefaultSelected"
-                                               },
-                           "type":  "grid",
-                           "summaryVisibility":  "Hide element",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  true
-                       },
-                       {
-                           "key":  "textDisplayName",
-                           "templateOptions":  {
-                                                   "label":  "Display name",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridSelectedMailbox",
-                                                   "dependOnProperty":  "DisplayName",
-                                                   "placeholder":  "\u003cretrieving current value\u003e"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textCA1",
-                           "templateOptions":  {
-                                                   "label":  "CustomAttribute1",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridSelectedMailbox",
-                                                   "dependOnProperty":  "CustomAttribute1",
-                                                   "placeholder":  "\u003cretrieving current value\u003e"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textCA2",
-                           "templateOptions":  {
-                                                   "label":  "CustomAttribute2",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridSelectedMailbox",
-                                                   "dependOnProperty":  "CustomAttribute2",
-                                                   "placeholder":  "\u003cretrieving current value\u003e"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textCA3",
-                           "templateOptions":  {
-                                                   "label":  "CustomAttribute3",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridSelectedMailbox",
-                                                   "dependOnProperty":  "CustomAttribute3",
-                                                   "placeholder":  "\u003cretrieving current value\u003e"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textCA4",
-                           "templateOptions":  {
-                                                   "label":  "CustomAttribute4",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridSelectedMailbox",
-                                                   "dependOnProperty":  "CustomAttribute4",
-                                                   "placeholder":  "\u003cretrieving current value\u003e"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textCA5",
-                           "templateOptions":  {
-                                                   "label":  "CustomAttribute5",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridSelectedMailbox",
-                                                   "dependOnProperty":  "CustomAttribute5",
-                                                   "placeholder":  "\u003cretrieving current value\u003e"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textCA6",
-                           "templateOptions":  {
-                                                   "label":  "CustomAttribute6",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridSelectedMailbox",
-                                                   "dependOnProperty":  "CustomAttribute6",
-                                                   "placeholder":  "\u003cretrieving current value\u003e"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       },
-                       {
-                           "key":  "textCA7",
-                           "templateOptions":  {
-                                                   "label":  "CustomAttribute7",
-                                                   "useDependOn":  true,
-                                                   "dependOn":  "gridSelectedMailbox",
-                                                   "dependOnProperty":  "CustomAttribute7",
-                                                   "placeholder":  "\u003cretrieving current value\u003e"
-                                               },
-                           "type":  "input",
-                           "summaryVisibility":  "Show",
-                           "requiresTemplateOptions":  true,
-                           "requiresKey":  true,
-                           "requiresDataSource":  false
-                       }
-                   ]
-    }
+  {
+    "label": "Select mailbox",
+    "fields": [
+      {
+        "key": "searchMailbox",
+        "templateOptions": {
+          "label": "Search Usermailbox",
+          "required": true
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "selectedmailbox",
+        "templateOptions": {
+          "label": "Select Usermailbox",
+          "required": true,
+          "grid": {
+            "columns": [
+              {
+                "headerName": "Display Name",
+                "field": "DisplayName"
+              },
+              {
+                "headerName": "Primary Smtp Address",
+                "field": "PrimarySmtpAddress"
+              },
+              {
+                "headerName": "User Principal Name",
+                "field": "UserPrincipalName"
+              },
+              {
+                "headerName": "Hidden From Address Lists Enabled",
+                "field": "HiddenFromAddressListsEnabled"
+              }
+            ],
+            "height": 300,
+            "rowSelection": "single"
+          },
+          "dataSourceConfig": {
+            "dataSourceGuid": "$dataSourceGuid_0",
+            "input": {
+              "propertyInputs": [
+                {
+                  "propertyName": "searchValue",
+                  "otherFieldValue": {
+                    "otherFieldKey": "searchMailbox"
+                  }
+                }
+              ]
+            }
+          },
+          "useFilter": true,
+          "useDefault": false,
+          "allowCsvDownload": true
+        },
+        "type": "grid",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": true
+      }
+    ]
+  },
+  {
+    "label": "Edit attributes",
+    "fields": [
+      {
+        "key": "textDisplayName",
+        "templateOptions": {
+          "label": "Display name",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "DisplayName",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA1",
+        "templateOptions": {
+          "label": "CustomAttribute1",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute1",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA2",
+        "templateOptions": {
+          "label": "CustomAttribute2",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute2",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA3",
+        "templateOptions": {
+          "label": "CustomAttribute3",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute3",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA4",
+        "templateOptions": {
+          "label": "CustomAttribute4",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute4",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA5",
+        "templateOptions": {
+          "label": "CustomAttribute5",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute5",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA6",
+        "templateOptions": {
+          "label": "CustomAttribute6",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute6",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA7",
+        "templateOptions": {
+          "label": "CustomAttribute7",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute7",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA8",
+        "templateOptions": {
+          "label": "CustomAttribute8",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute8",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA9",
+        "templateOptions": {
+          "label": "CustomAttribute9",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute9",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA10",
+        "templateOptions": {
+          "label": "CustomAttribute10",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute10",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA11",
+        "templateOptions": {
+          "label": "CustomAttribute11",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute11",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA12",
+        "templateOptions": {
+          "label": "CustomAttribute12",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute12",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA13",
+        "templateOptions": {
+          "label": "CustomAttribute13",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute13",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA14",
+        "templateOptions": {
+          "label": "CustomAttribute14",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute14",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      },
+      {
+        "key": "textCA15",
+        "templateOptions": {
+          "label": "CustomAttribute15",
+          "useDependOn": true,
+          "dependOn": "selectedmailbox",
+          "dependOnProperty": "CustomAttribute15",
+          "placeholder": "<retrieving current value>"
+        },
+        "type": "input",
+        "summaryVisibility": "Show",
+        "requiresTemplateOptions": true,
+        "requiresKey": true,
+        "requiresDataSource": false
+      }
+    ]
+  }
 ]

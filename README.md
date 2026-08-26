@@ -1,65 +1,102 @@
-<!-- Description -->
+# HelloID-Conn-SA-Full-Exchange-On-Premises-Usermailbox-Update-Attributes
+
+| :information_source: Information                                                                                                                                                                                                                                                                                                                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| This repository contains the connector and configuration code only. The implementer is responsible for acquiring the connection details such as username, password, certificate, etc. You might even need to sign a contract or agreement with the supplier before implementing this connector. Please contact the client's application manager to coordinate the connector requirements. |
+
 ## Description
-This HelloID Service Automation Delegated Form provides the functionality to change exchange attributes. implemented are the displayname and the first 7 custom attrbutes.
- 
- 1. Enter a name to lookup the mailbox.
- 2. The result will show you a list of mailboxes. You will need select to correct one.
- 3. The current values of the displayname and custom attributes are collected, and can be edited. 
- 4. On submit, the modified values wil be updated in exchange.
 
-## Versioning
-| Version | Description | Date |
-| - | - | - |
-| 1.0.2   | Added version number and updated code for SA-agent and auditlogging | 2022/08/24  |
-| 1.0.1   | Added version number and updated all-in-one script | 2021/11/16  |
-| 1.0.0   | Initial release | 2021/04/29  |
+_HelloID-Conn-SA-Full-Exchange-On-Premises-Usermailbox-Update-Attributes_ is a template designed for use with HelloID Service Automation (SA) Delegated Forms. It can be imported into HelloID and customized according to your requirements.
 
-<!-- TABLE OF CONTENTS -->
-## Table of Contents
-* [Description](#description)
-* [All-in-one PowerShell setup script](#all-in-one-powershell-setup-script)
-  * [Getting started](#getting-started)
-* [Post-setup configuration](#post-setup-configuration)
-* [Manual resources](#manual-resources)
+By using this delegated form, you can manage Exchange On-Premises user mailbox attributes directly from HelloID. The following workflow is available:
 
+1.  Search for user mailboxes by name, SamAccountName, alias, or primary SMTP address
+2.  Select the target mailbox from the search results
+3.  View current attribute values including Display Name and CustomAttributes 1-15
+4.  Enter new values for the mailbox attributes
+5.  Submit the form to update the mailbox attributes in Exchange On-Premises
+6.  Receive confirmation and audit logging of the changes
 
-## All-in-one PowerShell setup script
-The PowerShell script "createform.ps1" contains a complete PowerShell script using the HelloID API to create the complete Form including user defined variables, tasks and data sources.
+## Getting started
 
- _Please note that this script asumes none of the required resources do exists within HelloID. The script does not contain versioning or source control_
+### Requirements
 
+- **Exchange On-Premises Server**:<br>
+  An accessible Exchange On-Premises server with remote PowerShell enabled. The connection URI must be accessible from the HelloID agent or cloud environment.
+- **PowerShell Remoting**:<br>
+  PowerShell remoting must be enabled on the Exchange server. The connection uses the Microsoft.Exchange configuration endpoint.
+- **HelloID Agent** (if not running in cloud):<br>
+  A HelloID on-premises agent is required if the Exchange server is not accessible from the cloud. The agent must have network connectivity to the Exchange server.
+- **Service Account**:<br>
+  A service account with sufficient permissions to connect to Exchange On-Premises and update mailbox attributes. The account must have rights to execute Set-Mailbox and Get-Mailbox cmdlets.
 
-### Getting started
-Please follow the documentation steps on [HelloID Docs](https://docs.helloid.com/hc/en-us/articles/360017556559-Service-automation-GitHub-resources) in order to setup and run the All-in one Powershell Script in your own environment.
+### Connection settings
 
+The following user-defined variables are used by the connector.
 
-## Post-setup configuration
-After the all-in-one PowerShell script has run and created all the required resources. The following items need to be configured according to your own environment
- 1. Update the following [user defined variables](https://docs.helloid.com/hc/en-us/articles/360014169933-How-to-Create-and-Manage-User-Defined-Variables)
-<table>
-  <tr><td><strong>Variable name</strong></td><td><strong>Example value</strong></td><td><strong>Description</strong></td></tr>
-  <tr><td>ExchangeConnectionUri</td><td>********</td><td>Exchange server URI</td></tr>
-  <tr><td>ExchangeAdminUsername</td><td>domain/user</td><td>Exchange server admin account</td></tr>
-  <tr><td>ExchangeAdminPassword</td><td>********</td><td>Exchange server admin password</td></tr>
-  <tr><td>ExchangeAuthentication</td><td>kerberos</td><td>Exchange server authentication method</td></tr> 
-   <tr><td>ExchangeUpdateMailboxAttributesSearchOU</td><td>Example.com/Users</td><td>OrganizationalUnit to search for mailbox</td></tr>
-</table>
+| Setting               | Description                                                                  | Mandatory |
+| --------------------- | ---------------------------------------------------------------------------- | --------- |
+| ExchangeConnectionUri | The URI to the Exchange server (e.g., http://server.domain.local/PowerShell) | Yes       |
+| ExchangeAdminUsername | The username of the Exchange administrator account                           | Yes       |
+| ExchangeAdminPassword | The password of the Exchange administrator account                           | Yes       |
 
-## Manual resources
-This Delegated Form uses the following resources in order to run
+## Remarks
 
+### Supported Attributes
 
-### Powershell data source '[powershell-datasource]_Exchange-On-Premises-Update-Mailbox-Attributes-GetMailbox'
-This Powershell data source runs a query to search for the mailbox.
+This connector supports updating the following mailbox attributes:
 
-### Powershell data source '[powershell-datasource]_Exchange-On-Premises-Update-Mailbox-Attributes-Selected-Mailbox'
-This Powershell data source runs a query to search for the mailbox.
+- Display Name
+- CustomAttribute1 through CustomAttribute15
 
-### Delegated form task '[task]_Exchange on-premise - Update mailbox attributes'
-This Powershell data source runs a query to collect the values of the relevant current attributes for the mailbox.
+All custom attributes are optional. Only attributes with values will be updated during the Set-Mailbox operation.
+
+### Session Management
+
+The connector uses PowerShell remoting sessions to connect to Exchange On-Premises. Sessions are properly managed with:
+
+- Explicit session creation with authentication and session options
+- Limited command import (only Set-Mailbox and Get-Mailbox) for better performance
+- Proper session cleanup in finally block to ensure disconnection even on errors
+
+### Search Filter
+
+The datasource supports wildcard searches across multiple mailbox properties:
+
+- Name
+- SamAccountName
+- Alias
+- PrimarySmtpAddress
+
+When searching with "\*" (asterisk), all user mailboxes matching the RecipientTypeDetails filter are returned.
+
+### Performance Optimization
+
+The Get-Mailbox datasource only selects required properties to limit memory usage and improve performance. The selected properties include identity fields, display information, and all 15 custom attributes.
+
+### Error Handling
+
+All scripts implement comprehensive error handling with:
+
+- Detailed error messages including line numbers and context
+- Proper audit logging for both success and failure scenarios
+- Action message tracking to identify exactly where errors occur
+- Graceful session cleanup even when errors are encountered
+
+## Development resources
+
+### Microsoft Documentation
+
+- [Connect to Exchange Servers using Remote PowerShell](https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-servers-using-remote-powershell)
+- [Get-Mailbox cmdlet](https://learn.microsoft.com/en-us/powershell/module/exchange/get-mailbox)
+- [Set-Mailbox cmdlet](https://learn.microsoft.com/en-us/powershell/module/exchange/set-mailbox)
+- [Remove-PSSession cmdlet](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/remove-pssession)
 
 ## Getting help
-_If you need help, feel free to ask questions on our [forum](https://forum.helloid.com/forum/helloid-connectors/service-automation/253-helloid-sa-exchange-onpremises-update-mailbox-attributes)_
 
-## HelloID Docs
+> :bulb: **Tip:**  
+> _For more information on Delegated Forms, please refer to our [documentation](https://docs.helloid.com/en/service-automation/delegated-forms.html) pages_.
+
+## HelloID docs
+
 The official HelloID documentation can be found at: https://docs.helloid.com/
