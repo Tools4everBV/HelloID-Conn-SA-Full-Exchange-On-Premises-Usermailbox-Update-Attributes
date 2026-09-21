@@ -1,0 +1,94 @@
+[
+  {
+    "key": "ExchangeGuid",
+    "type": 0
+  },
+  {
+    "key": "SamAccountName",
+    "type": 0
+  },
+  {
+    "key": "UserPrincipalName",
+    "type": 0
+  },
+  {
+    "key": "DistinguishedName",
+    "type": 0
+  },
+  {
+    "key": "PrimarySmtpAddress",
+    "type": 0
+  },
+  {
+    "key": "DisplayName",
+    "type": 0
+  },
+  {
+    "key": "Identity",
+    "type": 0
+  },
+  {
+    "key": "HiddenFromAddressListsEnabled",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute1",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute2",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute3",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute4",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute5",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute6",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute7",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute8",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute9",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute10",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute11",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute12",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute13",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute14",
+    "type": 0
+  },
+  {
+    "key": "CustomAttribute15",
+    "type": 0
+  }
+]
