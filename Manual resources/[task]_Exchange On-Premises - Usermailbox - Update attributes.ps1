@@ -1,5 +1,6 @@
 # Variables configured in form
 $mailbox = $form.selectedmailbox
+$MailboxDisplayName = $form.textDisplayName
 
 # Global variables
 # Outcommented as these are set from Global Variables
